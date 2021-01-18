@@ -101,6 +101,22 @@
 						this.$refs.header.$on('add-todo',this.addTodo)
 		(3).备注：特别适用于：子 ==> 父传递数据
 
+## 9.全局事件总线(GlobalEventBus)
+		组件间通信的一种方式，适用于任意组件间通信
+		(1).安装全局事件总线，在main.js中配置
+					new Vue({
+						beforeCreate() {
+							Vue.prototype.$bus = this //安装事件总线
+						},
+						el:'#app',
+						render:h => h(App)
+					})
+		(2).需要接受数据的组件中给$bus绑定自定义事件
+					mounted() {
+						this.$bus.$on('xxxx',this.yyyyy)
+					}
+		(3).要提供数据的组件中触发事件：
+					this.$bus.$emit('xxxx',数据)
 
 
 
