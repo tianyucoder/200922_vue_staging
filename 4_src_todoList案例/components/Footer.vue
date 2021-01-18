@@ -43,7 +43,7 @@
 					this.clearAll()
 				}
 			}
-		},
+		}
 	}
 </script>
 

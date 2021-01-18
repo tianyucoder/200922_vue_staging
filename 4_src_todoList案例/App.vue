@@ -20,19 +20,13 @@
 		name:'App',
 		components:{Header,List,Footer}, //注册组件
 		data(){ //数据
-			const localData = localStorage.getItem('todos')
-			let todos
-			try {
-				//尝试解析localStorage中的数据，如有数据，直接使用，无数据，使用空数组。
-				todos = JSON.parse(localData) || []
-				console.log(todos)
-			} catch (error) {
-				alert('本地缓存数据异常，数据已重置')
-				localStorage.removeItem('todos')
-				todos = []
-			}
 			return {
-				todos
+				todos:[
+					{id:'001',name:'抽烟',done:true},
+					{id:'002',name:'喝酒',done:false},
+					{id:'003',name:'烫头',done:true},
+					{id:'004',name:'敲代码',done:false},
+				]
 			}
 		},
 		methods:{
@@ -71,11 +65,6 @@
 				this.todos = this.todos.filter((todoObj)=>{
 					return !todoObj.done
 				})
-			}
-		},
-		watch:{
-			todos(value){
-				localStorage.setItem('todos',JSON.stringify(value))
 			}
 		}
 	}

@@ -52,9 +52,35 @@
 		第三种方式：vue.confog.js中配置
 
 ## 4.todoList案例
-		(1).组件data中的数据、接到的props，都在vc对象上。
-		(2).<input v-model="x" @click="demo"/> 会先执行demo函数，在维护x
+		(1).组件data中的数据、接到的props、methods中的方法、computed中的属性，都在vc对象上。
+		(2).<input v-model="x" @click="demo"/> 会先执行demo函数，在维护x的值
 		(3).使用计算属性时，只是读取用get，修改记得要用set
+		(4).methods、computed、watch并没有严格意义上的界定，视具体功能而定，有时用什么都可以实现。
+
+## 5.SessionStorage与LocalStorage
+		(1). Cookie, SessionStorage, LocalStorage这三者都可以被用来在浏览器端存储数据，而且都是字符串类型的键值对！
+		(2). 注意：session和SessionStorage不是一个概念！！！
+				 在服务端有一种存储方式叫做：session会话存储，常常被简称session。
+				 SessionStorage和LocalStorage都是浏览器本地存储，统称为Web Storage。
+		(3). 存储内容大小一般支持5-10MB
+		(4). 浏览器端通过 Window.sessionStorage 和 Window.localStorage 属性来实现本地存储机制。
+		(5). 相关API：
+					1. localStorage.setItem('key', 'value');
+							该方法接受一个键名和值作为参数，将会把键值对添加到存储中，如果键名存在，则更新其对应的值。
+							
+					2. var data = xxxxxStorage.getItem('person');
+							该方法接受一个键名作为参数，返回键名对应的值。
+
+					3. xxxxxStorage.removeItem('key');
+							该方法接受一个键名作为参数，并把该键名从存储中删除。
+						
+					4. xxxxxStorage.clear()
+						调用该方法会清空存储中的所有键名
+
+	备注：SessionStorage存储的内容会随着浏览器窗口关闭而消失。
+        LocalStorage存储的内容，需要手动清除才会消失。
+				xxxxxStorage.getItem(xxx)如果xxx对应的value获取不到，那么getItem的返回值是null
+				JSON.parse(null)的结果依然是null
 
 
 
