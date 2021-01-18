@@ -73,8 +73,11 @@
 			}
 		},
 		watch:{
-			todos(value){
-				localStorage.setItem('todos',JSON.stringify(value))
+			todos:{
+				deep:true, //开启深度监视
+				handler(value){
+					localStorage.setItem('todos',JSON.stringify(value))
+				}
 			}
 		}
 	}

@@ -82,6 +82,20 @@
 				xxxxxStorage.getItem(xxx)如果xxx对应的value获取不到，那么getItem的返回值是null
 				JSON.parse(null)的结果依然是null
 
+## 6.todoList案例_本地存储版
+		(1).解析LocaStorage中数据时要记得处理解析异常
+		(2).
+
+## 7.深度监视
+
+## 8.自定义事件
+		绑定自定义事件：
+				第一种方式：<Demo @haha="test"/>
+				第二种方式：<Demo ref="demo"/>
+										mounted中：this.$refs.demo.$on('haha',this.test)
+		触发自定义事件：
+				this.$refs.header.$on('add-todo',this.addTodo)
+		备注：特别适用于：子==>父传递数据
 
 
 
