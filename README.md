@@ -43,7 +43,15 @@
 						}
 					}
 
-## 3.todoList案例
+## 3.scoped、name、语法检查
+### 3.1. scoped可以让样式在局部生效
+### 3.2. name可以给组件命名
+### 3.2. 语法检查配置
+		第一种方式：/*eslint-disable-next-line*/
+		第二种方式：/*eslint-disable*/
+		第三种方式：vue.confog.js中配置
+
+## 4.todoList案例
 
 
 
