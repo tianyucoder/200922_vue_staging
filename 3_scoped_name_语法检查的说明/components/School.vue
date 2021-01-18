@@ -2,12 +2,15 @@
 	<div>
 		<h2 class="name">学校名：{{name}}</h2>
 		<h2 class="address">学校地址：{{address}}</h2>
-		<h4>我收到的名字是{{username}}</h4>
+		<h4 class="demo">我收到的名字是{{username}}</h4>
 	</div>
 </template>
 
 <script>
+	const a = 1
+	const b = 2
 	export default {
+		name:'School', //专门用于指定组件名
 		//配置数据
 		data(){
 			console.log('School',this)
@@ -35,11 +38,14 @@
 	}
 </script>
 
-<style>
+<style scoped>
 	.name{
 		background-color: gray;
 	}
 	.address{
 		background-color: orange;
+	}
+	.demo{
+		background-color: skyblue;
 	}
 </style>
