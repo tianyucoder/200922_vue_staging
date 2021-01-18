@@ -1,5 +1,5 @@
 ## 1.Vue脚手架说明
-### 1.1.文件结构分析
+### 1.1. 文件结构分析
 		|-- node_modules
 		|-- public
 				|-- index.html: 主页面文件
@@ -10,7 +10,7 @@
 		|-- .gitignore: git版本管制忽略的配置
 		|-- package.json: 应用包配置文件 
 		|-- README.md: 应用描述说明的readme文件
-### 1.2.关于h函数说明
+### 1.2. 关于h函数说明
 		vue.runtime.common.js（项目中用的多） : 
 				1.不包含模板解析器，打包后体积小
 				2.配置项中的不能写template，要用render: h => h(App)代替
@@ -19,11 +19,11 @@
 				2.配置可以写template
 
 ## 2.ref与props
-### 2.1.ref的用法：
+### 2.1. ref的用法：
 		(1).给组件标签指定ref：<Demo ref="xxxx"/>，获取到的是组件实例对象vc
 		(2).给html标签指定ref：<input ref="xxxx"/>，获取到的是真实DOM节点
 		(3).通过this.$refs获取
-### 2.2.props的用法
+### 2.2. props的用法
 		(1).传递props：<Demo :a="xxx"/>
 		(2).Demo组件中声明接收：
 				第一种方式（只声明）：
@@ -52,6 +52,7 @@
 		第三种方式：vue.confog.js中配置
 
 ## 4.todoList案例
+### 4.1.todolist静态
 
 
 

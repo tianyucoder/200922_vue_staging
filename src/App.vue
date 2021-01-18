@@ -2,22 +2,52 @@
 	<div class="todo-container">
     <div class="todo-wrap">
 			<!-- 头部 -->
-      <Header/>
+      <Header :addTodo="addTodo"/>
 			<!-- 列表 -->
-      <List/>
+      <List :todos="todos" :updateTodo="updateTodo"/>
 			<!-- 底部 -->
       <Footer/>
     </div>
   </div>
 </template>
 
-<script>
+<script>	
+	//引入组件
 	import Header from './components/Header'
 	import List from './components/List'
 	import Footer from './components/Footer'
 	export default {
 		name:'App',
-		components:{Header,List,Footer}
+		components:{Header,List,Footer}, //注册组件
+		data(){ //数据
+			return {
+				todos:[
+					{id:'001',name:'抽烟',done:true},
+					{id:'002',name:'喝酒',done:false},
+					{id:'003',name:'烫头',done:true},
+					{id:'004',name:'敲代码',done:false},
+				]
+			}
+		},
+		methods:{
+			//添加一个todo
+			addTodo(todoObj){
+				this.todos.unshift(todoObj)
+			},
+
+			//更新一个todo--用id去更新
+			/* updateTodo(id,done){
+				this.todos = this.todos.map((todo)=>{
+					if(id === todo.id) return {...todo,done}
+					else return todo
+				})
+			} */
+
+			//更新一个todo--用index去更新
+			updateTodo(index,done){
+				this.todos[index].done = done
+			}
+		}
 	}
 </script>
 
