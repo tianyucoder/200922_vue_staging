@@ -9,8 +9,7 @@
 	export default {
 		name:'Demo2',
 		mounted() {
-			// console.log(this.$bus)
-			console.log(this.$bus.__proto__===this.prototype)
+			console.log(this.$bus)
 		},
 		methods:{
 			sendData(){
