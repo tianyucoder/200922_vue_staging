@@ -99,7 +99,7 @@
 						mounted中：this.$refs.demo.$on('haha',this.test)
 		(2).触发自定义事件：
 						this.$refs.header.$on('add-todo',this.addTodo)
-		(3).备注：特别适用于：子==>父传递数据
+		(3).备注：特别适用于：子 ==> 父传递数据
 
 
 

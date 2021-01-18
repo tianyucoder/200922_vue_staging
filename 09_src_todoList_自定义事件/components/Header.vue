@@ -17,14 +17,14 @@
 				name:''
 			}
 		},
-		props:['addTodo'],
 		methods:{
 			add(){
+				//校验数据
 				if(!this.name.trim()) return alert('输入不能为空')
 				//根据用户的输入生成一个todo对象
 				const todoObj = {id:Date.now(),name:this.name,done:false}
-				//通知App在data中去添加一个todo
-				this.addTodo(todoObj)
+				//使用自定义事件去通知App在data中去添加一个todo
+				this.$emit('add-todo',todoObj)
 				//清空输入
 				this.name = ''
 			}
