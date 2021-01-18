@@ -91,13 +91,15 @@
 		(2).配置deep:true可以检测所有层次的数据
 
 ## 8.自定义事件
-		绑定自定义事件：
-				第一种方式：<Demo @haha="test"/>
-				第二种方式：<Demo ref="demo"/>
-										mounted中：this.$refs.demo.$on('haha',this.test)
-		触发自定义事件：
-				this.$refs.header.$on('add-todo',this.addTodo)
-		备注：特别适用于：子==>父传递数据
+		(1).绑定自定义事件：
+				第一种方式：
+						<Demo @haha="test"/>
+				第二种方式：
+						<Demo ref="demo"/>
+						mounted中：this.$refs.demo.$on('haha',this.test)
+		(2).触发自定义事件：
+						this.$refs.header.$on('add-todo',this.addTodo)
+		(3).备注：特别适用于：子==>父传递数据
 
 
 
