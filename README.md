@@ -52,7 +52,9 @@
 		第三种方式：vue.confog.js中配置
 
 ## 4.todoList案例
-### 4.1.todolist静态
+		(1).组件data中的数据、接到的props，都在vc对象上。
+		(2).<input v-model="x" @click="demo"/> 会先执行demo函数，在维护x
+		(3).使用计算属性时，只是读取用get，修改记得要用set
 
 
 
