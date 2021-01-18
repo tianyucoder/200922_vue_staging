@@ -8,14 +8,18 @@
 			<input type="checkbox" :checked="todo.done" @click="update(index,$event)"/>
 			<span>{{todo.name}}</span>
 		</label>
-		<button class="btn btn-danger" :style="{display:isEnter ? 'block' : 'none'}">删除</button>
+		<button 
+			class="btn btn-danger" 
+			:style="{display:isEnter ? 'block' : 'none'}"
+			@click="deleteT(index)"
+		>删除</button>
 	</li>
 </template>
 
 <script>
 	export default {
 		name:'Item',
-		props:['todo','updateTodo','index'],
+		props:['todo','updateTodo','index','deleteTodo'],
 		data(){
 			return {
 				isEnter:false //标识鼠标是否移入
@@ -29,11 +33,18 @@
 				this.updateTodo(id,checked)
 			} */
 
-			//用index去更新
+			//用index去更新todo
 			update(index,event){
 				//通知App去更新这个todo
 				const {checked} = event.target
 				this.updateTodo(index,checked)
+			},
+
+			//用于index去删除一个todo
+			deleteT(index){
+				if(confirm('确定删除吗')){
+					this.deleteTodo(index)
+				}
 			}
 		}
 	}

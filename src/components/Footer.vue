@@ -1,10 +1,10 @@
 <template>
 	<div class="todo-footer">
 		<label>
-			<input type="checkbox"/>
+			<input type="checkbox" v-model="isAll"/>
 		</label>
 		<span>
-			<span>已完成0</span> / 全部2
+			<span>已完成{{doneCount}}</span> / 全部{{total}}
 		</span>
 		<button class="btn btn-danger">清除已完成任务</button>
 	</div>
@@ -12,7 +12,32 @@
 
 <script>
 	export default {
-		name:'Footer'
+		name:'Footer',
+		props:['todos','updateAll'],
+		computed:{
+			doneCount(){
+				return this.todos.reduce((pre,current)=> pre += current.done ? 1 : 0 ,0)
+			},
+			total(){
+				return this.todos.length
+			},
+			isAll:{
+				//使用计算属性的set实现全选
+				set(flag){
+					this.updateAll(flag)
+				},
+				get(){
+					return this.doneCount === this.total && this.total>0
+				}
+			}
+		},
+		methods:{
+			//使用方法去全选
+			/* checkAll(event){
+				console.log('@',event.target.checked)
+				this.updateAll(event.target.checked)
+			} */
+		}
 	}
 </script>
 

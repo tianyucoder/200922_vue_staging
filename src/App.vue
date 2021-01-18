@@ -4,9 +4,9 @@
 			<!-- 头部 -->
       <Header :addTodo="addTodo"/>
 			<!-- 列表 -->
-      <List :todos="todos" :updateTodo="updateTodo"/>
+      <List :todos="todos" :updateTodo="updateTodo" :deleteTodo="deleteTodo"/>
 			<!-- 底部 -->
-      <Footer/>
+      <Footer :todos="todos" :updateAll="updateAll"/>
     </div>
   </div>
 </template>
@@ -46,6 +46,18 @@
 			//更新一个todo--用index去更新
 			updateTodo(index,done){
 				this.todos[index].done = done
+			},
+
+			//删除一个todo--用index去删除
+			deleteTodo(index){
+				this.todos.splice(index,1)
+			},
+
+			//全选 or 全不选
+			updateAll(done){
+				this.todos = this.todos.map((todo)=>{
+					return {...todo,done}
+				})
 			}
 		}
 	}

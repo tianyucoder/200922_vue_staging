@@ -6,6 +6,7 @@
 			:todo="todoObj"
 			:updateTodo="updateTodo"
 			:index="index"
+			:deleteTodo="deleteTodo"
 		/>
 	</ul>
 </template>
@@ -15,7 +16,7 @@
 	export default {
 		name:'List',
 		components:{Item},
-		props:['todos','updateTodo'] //声明接收props，声明后可以在vc上找得到
+		props:['todos','updateTodo','deleteTodo'] //声明接收props，声明后可以在vc上找得到
 	}
 </script>
 
