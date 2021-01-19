@@ -133,3 +133,16 @@
 
 
 
+## 10.插槽
+		作用：向组件指定位置中插入html结构
+		分类：
+				默认插槽：<slot></slot>
+				命名插槽：<slot name="s1"></slot>
+				作用域插槽：后期项目中会讲到
+		使用：	
+				父组件中：
+						<template slot="s1">
+							具体html结构
+						</template>
+				子组件中：
+						<slot></slot> 或 <slot name="s1"></slot>
