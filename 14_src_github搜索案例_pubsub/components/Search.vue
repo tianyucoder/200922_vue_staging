@@ -9,9 +9,8 @@
 </template>
 
 <script>
-	// import axios from 'axios'
+	import axios from 'axios'
 	import PubSub from 'pubsub-js'
-
 	export default {
 		name:'Search',
 		data(){
@@ -25,8 +24,8 @@
 				// this.$bus.$emit('get-list-data',{isFirst:false,isLoading:true})
 				PubSub.publish('get-list-data', {isFirst:false,isLoading:true});
 				try {
-					//发送请求---使用vue-resource
-					const response = await this.$http.get('https://api.github.com/search/users',{params:{q:this.keyWord}})
+					//发送请求
+					const response = await axios.get('https://api.github.com/search/users',{params:{q:this.keyWord}})
 					const {items} = response.data
 					//请求成功后，通知List组件更新他的data
 					// this.$bus.$emit('get-list-data',{isLoading:false,users:items})
@@ -39,9 +38,6 @@
 
 				}
 			}
-		},
-		mounted() {
-			console.log('vc',this)
 		},
 	}
 </script>
