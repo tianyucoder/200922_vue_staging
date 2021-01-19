@@ -119,6 +119,8 @@
 					mounted() {
 						this.$bus.$on('xxxx',this.yyyyy)
 					}
+					备注：上方的yyyy，若要配置在当前组件的methods中，则this是当前组件vc
+								上方的yyyy，若直接写函数，则this是$bus
 		(3).要提供数据的组件中触发事件：
 					this.$bus.$emit('xxxx',数据)
 		(4).备注：
