@@ -9,9 +9,6 @@
 
 	export default {
 		name:'App',
-		components:{Count},
-		mounted() {
-			console.log('vc',this)
-		},
+		components:{Count}
 	}
 </script>
