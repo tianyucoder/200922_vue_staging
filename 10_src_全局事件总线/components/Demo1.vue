@@ -22,6 +22,9 @@
 		mounted() {
 			this.$bus.$on('nice',this.test1)
 		},
+		beforeDestroy(){
+			this.$bus.$off('nice')
+		}
 	}
 </script>
 
