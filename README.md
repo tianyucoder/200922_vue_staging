@@ -29,12 +29,12 @@
 				(2).接收props：
 							第一种方式（只声明）：
 								props:['userName'] 
-
+	
 							第二种方式（限制类型）：
 								props:{
 									userName:Number
 								}
-
+	
 							第三种方式（限制类型、属性，指定默认值）：
 								props:{
 									userName:{
@@ -124,7 +124,7 @@
 						3.上方的数据可以传递多个，例如$emit('xxx-xxxx',数据1,数据2，数据3)
 							但一般传递多个的时候，我们包装成一个对象传递
 
-## 9.插槽
+## 9.slot插槽
 		也算是一种组件间通信的方式，适用于 父===>子，且传递的是html结构
 		(1).作用：父组件向子组件指定位置中插入html结构
 		(2).分类：
@@ -183,17 +183,17 @@
 							}
 						]
 					})
-    (3).注册路由器: main.js
+	(3).注册路由器: main.js
 					import router from './router'
 					new Vue({
 						router
 					})
-    (4).使用路由组件标签:
+	(4).使用路由组件标签:
 					<router-link to="/home">首页</router-link> //导航区
 					<router-view></router-view> //展示区
-    (5). 两个重要对象
-        $router: 代表路由器对象, 包含一些实现路由跳转/导航的方法: push()/replace()/back()
-        $route: 代表当前路由对象, 包含一些路由相关的属性: path/params/query
+	(5). 两个重要对象
+	    $router: 代表路由器对象, 包含一些实现路由跳转/导航的方法: push()/replace()/back()
+	    $route: 代表当前路由对象, 包含一些路由相关的属性: path/params/query
 
 ## 15.嵌套路由
 			routes:[
@@ -212,12 +212,12 @@
 					]
 				}
 			]
-			
+
 ## 16.路由params参数
 			(1).注册路时声明接收：params：path:'detail/:id'
 			(2).路由链接：<router-link to="/home/message/detail/001">点我</router-link>
 			(3).路由组件中接收：this.$route.params.id
- 
+
 ## 17.路由query参数
 			(1).注册路时无需声明接收：params：path:'detail'
 			(2).路由链接：<router-link to="/home/message/detail?id=001">点我</router-link>
@@ -246,9 +246,9 @@
 
 ## 19.路由的props配置：
 			第一种写法：props:{carName:'马自达·阿特兹'} //通过props映射自定义的静态数据
-
+	
 			第二种写法：props:true //映射params参数为props传给路由组件
-
+	
 			第三种写法：props(route){ //此处接收到的route是vc或vm身上的$route
 										const {id} = route.params
 										const {title,content} = route.query
