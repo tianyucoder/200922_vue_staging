@@ -148,3 +148,21 @@
 						</template>
 				子组件中：
 						<slot></slot> 或 <slot name="s1"></slot>
+
+## 11.vue-resource
+		vue1.x时期用于发送网络请求的库，现已弃用，了解即可
+
+## 12.求和案例vuex版
+		(1).项目根目录创建： vuex/store.js 
+					1.1) 应用Vuex插件
+					1.2) 创建store并管理：state、actions、mutations对象
+		(2).组件中读取状态：$store.state.xxxx
+		(3).组件中更新状态：$store.dispatch('动作名',数据)
+
+##
+
+##
+
+##
+
+##
