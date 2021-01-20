@@ -20,8 +20,7 @@
 				>
 					{{msg.title}}
 				</router-link>
-				<button @click="pushShow(msg)">push查看</button>
-				<button @click="replaceShow(msg)">replace查看</button>
+
 			</li>
 		</ul>
 		<hr/>
@@ -40,34 +39,6 @@
 					{id:'003',title:'消息3',content:'爱打麻将'},
 				]
 			}
-		},
-		methods: {
-			pushShow(msg){
-				this.$router.push({
-					name:'xiangqing',
-					params:{id:msg.id},
-					query:{
-						title:msg.title,
-						content:msg.content
-					}
-				})
-			},
-			replaceShow(msg){
-				this.$router.replace({
-					name:'xiangqing',
-					params:{id:msg.id},
-					query:{
-						title:msg.title,
-						content:msg.content
-					}
-				})
-			}
-		},	
-		mounted(){
-			console.log('Message挂载了')
-		},
-		beforeDestroy(){
-			console.log('Message将要销毁')
 		}
 	}
 </script>

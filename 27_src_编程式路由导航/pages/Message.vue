@@ -63,11 +63,5 @@
 				})
 			}
 		},	
-		mounted(){
-			console.log('Message挂载了')
-		},
-		beforeDestroy(){
-			console.log('Message将要销毁')
-		}
 	}
 </script>

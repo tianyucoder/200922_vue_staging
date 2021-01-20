@@ -158,11 +158,31 @@
 					1.2) 创建store并管理：state、actions、mutations对象
 		(2).组件中读取状态：$store.state.xxxx
 		(3).组件中更新状态：$store.dispatch('动作名',数据)
+		(4).actions中可以写业务逻辑、开启异步任务，若actions中没有任何逻辑，
+				可以在组件中直接$store.commit()去直接对话mutations进行更新状态
+		(5).mutations中尽量不写业务逻辑，只负责加工状态。
 
-## 
+## 13.Vuex中的getters
+			作用：Vuex中的数据想要经过处理后再使用，可以使用getters
+			写法：
+				const getters = {
+					bigSum(state){
+						return state.sum * 100
+					}
+				}
+			备注：getters不是必须要用，也可以用computed、methods、过滤器实现
 
-##
+## 14.Vuex优化版
+		优化1：将$store.state.xxxx 写成 computed
+		优化2：
+				使用：mapState、mapGetters自动生成原本我们亲自在computed中写的属性
+				使用：mapMutations、mapActions自动生成原本我们亲自在methods中写的回调
+		注意：以上所有mapXxxx方法在使用时：
+							1.若组件中用的名字 等于 actions、state、mutations、getters中的名字可以简写成数组
+							2.若组件中用的名字 不等于 actions、state、mutations、getters中的名字要写成对象
 
-##
+## 15.路由的基本使用
 
-##
+## 16.路由params参数
+
+## 17.路由query参数
