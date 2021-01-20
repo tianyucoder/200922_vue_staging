@@ -1,6 +1,11 @@
-import Vue from 'vue' //引入Vue
-import Vuex from 'vuex' //引入Vuex
-Vue.use(Vuex) //应用插件
+//引入Vue
+import Vue from 'vue'
+
+//引入Vuex
+import Vuex from 'vuex'
+
+//应用插件
+Vue.use(Vuex)
 
 //初始化状态,要写成一个对象，包含n组key-value，因为该state要管理n多个组件的状态
 const state = {
@@ -38,19 +43,11 @@ const mutations = {
 	}
 }
 
-//getters中配置的是state中的数据经过加工后的值 —— 类似于Vue中的computed
-const getters = {
-	bigSum(state){
-		return state.sum * 100
-	}
-}
-
 //创建store，用于管理：state对象、actions对象、mutations对象
 const store = new Vuex.Store({
 	state,
 	actions,
-	mutations,
-	getters
+	mutations
 })
 
 //暴露store
