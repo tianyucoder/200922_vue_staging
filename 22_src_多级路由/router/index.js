@@ -20,11 +20,8 @@ const router = new VueRouter({
 					component:Message,
 					children:[
 						{
-							// path:'detail/:id/:title/:content', //声明接收params参数
-							// path:'detail', //query参数无需声明即可接收
-							path:'detail/:id', //同时接收params和query，要先声明params
-							component:Detail,
-							name:'xiangqing'
+							path:'detail',
+							component:Detail
 						}
 					]
 				},

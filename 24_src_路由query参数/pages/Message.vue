@@ -6,20 +6,7 @@
 				<!-- <router-link :to="`/home/message/detail/${msg.id}/${msg.title}/${msg.content}`">{{msg.title}}</router-link> -->
 			
 				<!-- 路由切换时，携带query参数 -->
-				<!-- <router-link :to="`/home/message/detail/${msg.id}?title=${msg.title}&content=${msg.content}`">{{msg.title}}</router-link> -->
-
-				<router-link 
-					:to="{
-							name:'xiangqing',
-							params:{id:msg.id},
-							query:{
-								title:msg.title,
-								content:msg.content
-							}
-						}"
-				>
-					{{msg.title}}
-				</router-link>
+				<router-link :to="`/home/message/detail/${msg.id}?title=${msg.title}&content=${msg.content}`">{{msg.title}}</router-link>
 
 			</li>
 		</ul>

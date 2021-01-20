@@ -10,15 +10,18 @@
 <script>
 	export default {
 		name:'Detail',
+		mounted(){
+			console.log(this)
+		},
 		computed:{
 			id(){
 				return this.$route.params.id
 			},
 			title(){
-				return this.$route.query.title
+				return this.$route.params.title
 			},
 			content(){
-				return this.$route.query.content
+				return this.$route.params.content
 			},
 		}
 	}
