@@ -1,19 +1,19 @@
 <template>
 	<div>
-		<el-button>默认按钮</el-button>
-		<el-button type="primary">主要按钮</el-button>
-		<el-button type="success">成功按钮</el-button>
-		<el-button type="info">信息按钮</el-button>
-		<el-button type="warning">警告按钮</el-button>
-		<el-button type="danger">危险按钮</el-button>
-		<el-input placeholder="请输入内容"></el-input>
+		<button @click="getData">点我获取数据</button>
 	</div>
 </template>
 
 <script>
-	// import {el-button,el-input} from 'element-ui'
+	import axios from './ajax/axios'
+
 	export default {
 		name:'App',
-		// components:{el-button,el-input}
+		methods:{
+			async getData(){
+				const result = await axios.get('https://v1.hitokoto.cn/',{params:{name:'tom'}})
+				console.log(result)
+			}
+		}
 	}
 </script>
