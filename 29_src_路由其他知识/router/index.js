@@ -10,8 +10,10 @@ Vue.use(VueRouter)
 
 //创建一个路由器，管理所有的路由
 const router = new VueRouter({
+	mode:'history',
 	routes:[
 		{
+			// path:'/home*',//开启home的模糊匹配
 			path:'/home',
 			component:Home,
 			children:[
@@ -46,6 +48,10 @@ const router = new VueRouter({
 		{
 			path:'/about',
 			component:About
+		},
+		{
+			path:'/',
+			redirect:'/about' //此处要写路径
 		}
 	]
 })

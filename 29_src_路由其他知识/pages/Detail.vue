@@ -10,7 +10,12 @@
 <script>
 	export default {
 		name:'Detail',
-		props:['id','title','content'],
+		props:['id','title'],
+		data(){
+			return {
+				content:''
+			}
+		},
 		computed:{
 			/* id(){
 				return this.$route.params.id
@@ -20,7 +25,19 @@
 			},
 			content(){
 				return this.$route.query.content
-			}, */
+			}, 
+			*/
+		},
+		watch:{
+			$route:{
+				immediate:true,
+				deep:true,
+				handler(route){
+					setTimeout(()=>{
+						this.content = route.query.content
+					},500)
+				}
+			}
 		}
 	}
 </script>
